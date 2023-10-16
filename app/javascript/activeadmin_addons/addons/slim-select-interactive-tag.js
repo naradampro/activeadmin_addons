@@ -73,6 +73,14 @@ function setupInteractiveTag(containerEl) {
   });
 }
 
-window.addEventListener('load', () => {
+export function setup() {
   document.querySelectorAll('.tag-select-container').forEach(setupInteractiveTag);
+}
+
+window.addEventListener('load', () => {
+  setup();
+});
+
+window.addEventListener('turbo:load', () => {
+  setup();
 });
